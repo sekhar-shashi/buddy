@@ -1,0 +1,18 @@
+{
+    "plugins": ["security", "prettier"],
+    "extends": ["airbnb", "plugin:security/recommended", "prettier"],
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "root": true,
+    "rules": {
+      "object-curly-newline": "off",
+      "security/detect-object-injection": "off",
+      "security/detect-non-literal-fs-filename": "off",
+      "prettier/prettier": "error"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017
+  }
+  }

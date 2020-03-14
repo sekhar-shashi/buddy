@@ -1,0 +1,31 @@
+{
+  "name": "loungebuddy",
+  "version": "1.0.0",
+  "description": "This repository can be used to create and run following services * Client * Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "mongodb": "^3.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "3.1.0",
+    "lint-staged": "9.4.2",
+    "mocha": "7.0.0",
+    "nyc": "14.1.1",
+    "prettier": "1.18.2"
+  }
+}

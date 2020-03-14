@@ -1,0 +1,60 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "author": "shashi sekhar",
+  "license": "ISC",
+  "description": "service for loungebuddy",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node ./index.js",
+    "dev": "node --inspect-brk=0.0.0.0:9229 ./index.js",
+    "test": "mocha test --recursive --exit",
+    "lint": "eslint .",
+    "cover": "nyc --reporter=cobertura --reporter=lcov --reporter=html npm test ; nyc report"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test",
+      "pre-push": "lint-staged && npm run cover"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run lint-fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "3.1.0",
+    "lint-staged": "9.4.2",
+    "mocha": "7.0.0",
+    "nyc": "14.1.1",
+    "prettier": "1.18.2",
+    "proxyquire": "2.1.0",
+    "rewire": "4.0.1",
+    "sinon": "5.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "mongodb": "^3.5.4",
+    "mongoose": "^5.9.3",
+    "nodemon": "^2.0.2",
+    "npm": "^6.14.2",
+    "run": "^1.4.0",
+    "start": "^5.1.0"
+  }
+}
