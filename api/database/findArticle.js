@@ -16,8 +16,14 @@ const find = async (val) => {
     const db = mongoClient.db('articles');
 
     // Make the appropriate DB calls
-    const ret = await db.collection('article').find({});
-    return ret;
+   const result = await db.collection('article').findOne(val);
+       
+   if (result) {
+      console.log('result found ', result);
+      return result;
+    } else {
+      console.log(`error in findOne`);
+    }
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);

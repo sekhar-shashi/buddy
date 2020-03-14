@@ -4,10 +4,8 @@ const uri = 'mongodb://192.168.2.152:27017';
 
 const insert = async (db, val) => {
   var myStudent = { name: 'shashi', author: 'shashi' };
-  db.collection('article').insertOne(myStudent, function (err, result) {
-        if (err) throw err;
-        console.log("1 Recorded Inserted");
-    });
+  const x =  await db.collection('article').insertOne(myStudent);
+  return x;
 };
 
 const create = async (val) => {
@@ -26,7 +24,8 @@ const create = async (val) => {
     const db = mongoClient.db('articles');
 
     // Make the appropriate DB calls
-    await insert(db, val);
+    const result = await insert(db, val);
+    return result;
   } catch (e) {
     console.error(e);
   } finally {
