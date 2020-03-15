@@ -25,3 +25,13 @@ If any changes have been made to the `Dockerfile` and the image needs to be rebu
 If the containers were started using `docker-compose up` simply using `CTRL + C` will exit out and stop all the containers.
 In addition use the following command in the same directory of this project to stop and remove all the containers:
 `docker-compose down`
+
+
+### In case of issue on running applictaion use following commands
+
+uninstall XCode Command Line tools by deleting
+`/Library/Developer/CommandLineTools/`
+reinstall XCode CLI
+`sudo xcode-select --install`
+intall gyp
+`npm install -g node-gyp`
