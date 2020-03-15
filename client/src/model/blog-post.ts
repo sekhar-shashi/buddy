@@ -1,10 +1,9 @@
 export interface view {
-    id: number;
-    title: string;
-    description: string;
+    id: string;
+    name: string;
 }
 
 export interface post extends view {
-    body: string;
-    heroImage?: string;
+    author: string;
+    category: string;
 }

@@ -9,6 +9,7 @@ module.exports = {
       statements: 95,
     },
   },
+  preset: '@shelf/jest-mongodb',
   testMatch: ['<rootDir>/test/**/*.test.js'],
   coverageReporters: ['text-summary', 'lcov'],
   setupFiles: ['./test/setupTests.js'],

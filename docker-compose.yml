@@ -6,12 +6,13 @@ services:
     container_name: client
     ports:
       - "3000:3000"
-    command: sh -c ""
+    command: sh -c "npm install node-sass@4.9.4 && npm install && npm run start"
     volumes:
       - "${PWD}/client:/client"
     working_dir: /client
     environment:
      - NODE_ENV=production
+     - SASS_PATH=node_modules:src
     extra_hosts:
       - "docker-api.com.au:192.168.2.151"
     networks:

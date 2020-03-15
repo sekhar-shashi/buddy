@@ -3,7 +3,8 @@
     "extends": ["airbnb", "plugin:security/recommended", "prettier"],
     "env": {
       "node": true,
-      "mocha": true
+      "mocha": true,
+      "jest": true
     },
     "root": true,
     "rules": {

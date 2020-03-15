@@ -7,7 +7,7 @@ import getArticle from './article.service';
 const BlogContainer: React.FC = () => {
   const getArticleByRoute = useCallback(
     (id: string) => {
-      const articleId = Number.parseInt(id, 0);
+      const articleId = id || '';
       return getArticle(articleId);
     },
     [],

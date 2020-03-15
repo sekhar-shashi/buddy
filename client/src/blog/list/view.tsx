@@ -1,18 +1,19 @@
 import React from 'react';
-import { view } from 'model/blog-post';
+import { post } from 'model/blog-post';
 import { Link } from 'react-router-dom';
 
 interface Props {
-    post: view;
+    post:post;
 }
 
 const View = ({ post }: Props) => (
   <>
-    <Link to={`/${post.id}`}>
-      {post.title}
-    </Link>
     <div>
-      {post.description}
+      Name: {post.name}
+    </div>
+    Category: {post.category}
+    <div>
+      Author: {post.author}
     </div>
   </>
 );

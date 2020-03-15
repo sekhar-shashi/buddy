@@ -8,11 +8,11 @@ interface Props {
 const BlogView: React.FC<Props> = ({ article }: Props) => (
   <>
     <div>
-      {article.title}
+      Name: {article.name}
     </div>
-    <img src={article.heroImage} alt={article.title} />
+    Category: {article.category}
     <div>
-      {article.body}
+      Author: {article.author}
     </div>
   </>
 );

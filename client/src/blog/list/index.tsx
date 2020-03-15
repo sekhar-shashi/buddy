@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { view } from 'model/blog-post';
+import { post } from 'model/blog-post';
 import getArticles from './articles.service';
 import View from './view';
 
 const ListContainer = () => {
-  const [list, setList] = useState<view[] | undefined>(undefined);
+  const [list, setList] = useState<post[] | undefined>(undefined);
 
   useEffect(() => {
-    setList(getArticles());
+    const genRandomKey = async () => {
+      setList(await getArticles())
+    };
+  
+    genRandomKey();
   }, []);
 
   return (

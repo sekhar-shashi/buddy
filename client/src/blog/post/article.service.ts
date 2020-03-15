@@ -1,10 +1,10 @@
 import { post } from 'model/blog-post';
 
-const getArticle = (id: number): post => ({
+const getArticle = (id: string): post => ({
   id,
-  title: `abc ${id}`,
-  body: 'abc text',
-  description: `some description for ${id}`,
+  author: `abc ${id} `,
+  name: 'abc name',
+  category: `some category for ${id}`,
 });
 
 export default getArticle;

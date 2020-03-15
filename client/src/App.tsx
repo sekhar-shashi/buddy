@@ -11,15 +11,13 @@ import { StoreSate } from 'utils/reducers';
 import configureStore from 'utils/store';
 import history from 'utils/history';
 
-import Login from 'login';
-import Admin from 'admin';
+import AddArticle from 'add';
 import Blog from 'blog';
 
 const initialState = {};
 const store = configureStore(initialState, history);
 
 const App: React.FC = () => {
-  const user = useSelector((state: StoreSate) => state.login?.user);
   return (
     <ConnectedRouter history={history}>
       <Router>
@@ -27,18 +25,22 @@ const App: React.FC = () => {
           <nav>
             <ul>
               <li>
-                <Link to="/">Show Articles</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/add">Add new Articles</Link>
+              </li>
+              <li>
+                <Link to="/getAllArticle">Get All article</Link>
               </li>
             </ul>
           </nav>
 
           <Switch>
-            <Route path="/">
-              <Blog />
-            </Route>
+          <Route exact path="/" />
+          <Route path="/add" component={AddArticle} />
+          <Route path="/getAllArticle" component={Blog} />
+
           </Switch>
         </div>
       </Router>
