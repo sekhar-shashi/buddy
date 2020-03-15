@@ -13,7 +13,7 @@ class AddArticle extends React.Component<any,any> {
   //   this.setState({value: event.target.value});
   // }
 
-  handleSubmit(event: { preventDefault: () => void; }) {
+  async handleSubmit(event: { preventDefault: () => void; }) {
     if(!this.state.author){
       alert('please enter author details');
       event.preventDefault();
@@ -30,7 +30,7 @@ class AddArticle extends React.Component<any,any> {
       return;
     }
     // call Api to save data
-    this.postData('http://docker-api.com.au:1880/api/articles/add', { 
+   await this.postData('http://docker-api.com.au:1880/api/articles/add', { 
       name: this.state.name,
       author: this.state.author,
       category: this.state.category })
