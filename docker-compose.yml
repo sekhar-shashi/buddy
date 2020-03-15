@@ -6,7 +6,7 @@ services:
     container_name: client
     ports:
       - "3000:3000"
-    command: sh -c "npm install node-sass@4.9.4 && npm install && npm run start"
+    command: sh -c "npm install && npm run start"
     volumes:
       - "${PWD}/client:/client"
     working_dir: /client

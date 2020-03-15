@@ -16,6 +16,7 @@
     "create-react-app": "^3.4.0",
     "eslint": "^6.6.0",
     "history": "^4.10.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
@@ -59,7 +60,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "node-sass": "^4.13.1",
     "redux-devtools": "^3.5.0"
   }
 }
