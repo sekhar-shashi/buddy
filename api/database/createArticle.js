@@ -3,8 +3,7 @@ const { MongoClient } = require('mongodb');
 const uri = 'mongodb://192.168.2.152:27017';
 
 const insert = async (db, val) => {
-  var myStudent = { name: 'shashi', author: 'shashi' };
-  const x =  await db.collection('article').insertOne(myStudent);
+  const x = await db.collection('article').insertOne(val);
   return x;
 };
 
@@ -27,7 +26,9 @@ const create = async (val) => {
     const result = await insert(db, val);
     return result;
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e);
+    throw e;
   } finally {
     await client.close();
   }

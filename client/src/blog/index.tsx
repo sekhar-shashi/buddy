@@ -10,13 +10,10 @@ import BlogList from './list';
 
 const Blog = () => (
   <div>
-    Blog
+    All articles list:
     <Switch>
-      <Route exact path="/:id">
-        <BlogPost />
-      </Route>
       <Route exact path="/">
-        <BlogList />
+        <BlogPost />
       </Route>
     </Switch>
   </div>

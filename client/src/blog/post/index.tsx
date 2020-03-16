@@ -1,31 +1,41 @@
-import React, { useCallback } from 'react';
-import { Route } from 'react-router-dom';
-import { post } from 'model/blog-post';
+import React, { Component } from 'react';
+import getArtcile from './article.service';
 import BlogView from './view';
-import getArticle from './article.service';
+import { post } from 'model/blog-post';
 
-const BlogContainer: React.FC = () => {
-  const getArticleByRoute = useCallback(
-    (id: string) => {
-      const articleId = id || '';
-      return getArticle(articleId);
-    },
-    [],
-  );
 
-  return (
-    <Route
-      path="/:id"
-      render={({ match }) => {
-        const article = getArticleByRoute(match?.params.id);
+export default class BlogPost extends React.Component<{}, { value: [] }>  {
 
-        return article
-          ? <BlogView article={article as unknown as post} />
-          : <div>Page not found</div>;
-      }}
-    />
+    constructor(props: any) {
+      super(props);
 
-  );
-};
+      this.state = {
+        value : []
+      };
+    }
 
-export default BlogContainer;
+    componentWillMount() {
+        this.renderMyData();
+    }
+
+    renderMyData() {
+        fetch('http://localhost:/api/articles/get')
+            .then((response) => response.json())
+            .then((responseJson) => {
+              this.setState({ value : responseJson })
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+    }
+
+    render(){
+        return(
+          <div>
+          {this.state.value.map((item: post) => (
+            <div className="station" key={item.name}>{item.name}</div>
+          ))}
+        </div>
+        );
+    }
+}

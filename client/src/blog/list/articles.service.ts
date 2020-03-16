@@ -13,7 +13,7 @@ import { view } from 'model/blog-post';
 // };
 
 const getArticles = async() => {
-  return await fetch("http://localhost:9000/testAPI")
+  return await fetch("http://localhost:/api/articles/get")
         .then(res => res)
         .catch(err => err);
 

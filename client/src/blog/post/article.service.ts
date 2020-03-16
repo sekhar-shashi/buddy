@@ -1,10 +1,9 @@
 import { post } from 'model/blog-post';
 
-const getArticle = (id: string): post => ({
-  id,
-  author: `abc ${id} `,
-  name: 'abc name',
-  category: `some category for ${id}`,
-});
+const getArticle = async(id: string) => {
+  return await fetch("http://localhost:/api/articles/get")
+        .then(res => res)
+        .catch(err => err);
+};
 
 export default getArticle;
