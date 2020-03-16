@@ -27,6 +27,13 @@ In addition use the following command in the same directory of this project to s
 `docker-compose down`
 
 
+## Launching UI
+Once docker is running use http://localhost:3000
+
+## Testing backend
+Once docker is up use http://localhhost:1880/heartbeat to check if service is up or not
+
+
 ### In case of issue on running applictaion use following commands
 
 uninstall XCode Command Line tools by deleting
